@@ -1,7 +1,6 @@
 # Quadra-Livre
 Trabalho Sexta
 PESQUISA DE MERCADO
-
 1. Com que frequência você costuma jogar ou praticar esportes em quadras alugadas?
 ​[ ] 2 ou mais vezes por semana
 ​[2x] 1 vez por semana
