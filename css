@@ -14,10 +14,6 @@ body {
     color: #202b25;
 }
 
-/* ==========================
-   CABEÇALHO
-========================== */
-
 header {
     width: 100%;
     min-height: 80px;
@@ -60,10 +56,6 @@ nav a:hover {
     color: #36a866;
 }
 
-/* ==========================
-   BOTÕES
-========================== */
-
 .botao {
     display: inline-block;
     background-color: #239653;
@@ -84,9 +76,6 @@ nav a:hover {
     box-shadow: 0 5px 15px #23965335;
 }
 
-/* ==========================
-   BANNER PRINCIPAL
-========================== */
 
 .banner {
     min-height: 520px;
@@ -132,9 +121,6 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
-/* ==========================
-   SEÇÕES
-========================== */
 
 .secao {
     padding: 85px 8%;
@@ -147,9 +133,6 @@ nav a:hover {
     margin-bottom: 35px;
 }
 
-/* ==========================
-   FILTROS DE ESPORTES
-========================== */
 
 .filtros {
     display: flex;
@@ -182,9 +165,6 @@ nav a:hover {
     border-color: #239653;
 }
 
-/* ==========================
-   CARTÕES DAS QUADRAS
-========================== */
 
 .quadras {
     display: grid;
@@ -350,8 +330,6 @@ nav a:hover {
     width: 100%;
     margin-top: 25px;
 }
-
-/* MENSAGEM DA RESERVA */
 
 #mensagem {
     max-width: 550px;
