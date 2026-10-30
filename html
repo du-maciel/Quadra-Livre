@@ -3,45 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuadraLivre | Aluguel de Quadras</title>
     <link rel="stylesheet" href="estilos.css">
-    <title>Quadra Livre</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    
 
-    <h1>Quadra Livre</h1>
+    <header>
+        <a href="#inicio" class="logo">Quadra<span>Livre</span></a>
 
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#quadras">Quadras</a>
+            <a href="#reservar">Reservar</a>
+        </nav>
 
-    <img src="img/logo.jpg" alt="Logo">
-    <h2>Reserva de arenas em tempo real, divisão automática do pagamento entre os jogadores e gerenciamento de listas de espera.</h2>
-    <h3>Faça já sua reserva!</h3>
-    <ul id="lista-esportes">
-    <li><button onclick="mostrarHorarios('Fut7')">Fut7</button></li>
-    <li><button onclick="mostrarHorarios('Futsal')">Futsal</button></li>
-    <li><button onclick="mostrarHorarios('Tênis')">Tênis</button></li>
-    <li><button onclick="mostrarHorarios('Padel')">Padel</button></li>
-    <li><button onclick="mostrarHorarios('Futevôlei')">Futevôlei</button></li>
-    <li><button onclick="mostrarHorarios('Beach Tennis')">Beach Tennis</button></li>
-    <li><button onclick="mostrarHorarios('Vôlei de Praia')">Vôlei de Praia</button></li>
-    <li><button onclick="mostrarHorarios('Basquete')">Basquete</button></li>
-</ul>
+        <a href="#reservar" class="botao">Reservar agora</a>
+    </header>
 
-<section id="area-horarios" hidden>
-    <h2 id="titulo-esporte"></h2>
+    <main>
+        <section class="banner" id="inicio">
+            <div>
+                <p class="destaque">ALUGUEL DE QUADRAS ESPORTIVAS</p>
 
-    <label for="data-reserva">Escolha a data:</label>
-    <input type="date" id="data-reserva">
+                <h1>Jogue seu esporte<br>
+                    <span>favorito aqui!</span>
+                </h1>
 
-    <h3>Endereços / Arenas disponíveis</h3>
-    <div id="lista-enderecos"></div>
+                <p class="descricao">
+                    Quadras de futebol, futsal, vôlei e basquete.
+                    Escolha seu local e encontre um horário para jogar!
+                </p>
 
-    <h3>Horários disponíveis</h3>
-    <div id="horarios"></div>
-</section>
+                <a href="#quadras" class="botao">Encontrar quadras →</a>
+            </div>
+        </section>
 
-<script src="script.js"></script>
+        <section class="secao" id="quadras">
+            <p class="destaque">NOSSAS QUADRAS</p>
+            <h2>Escolha seu esporte</h2>
 
+            <div class="filtros">
+                <button class="filtro ativo" data-esporte="Todos">Todos</button>
+                <button class="filtro" data-esporte="Futebol">Futebol</button>
+                <button class="filtro" data-esporte="Futsal">Futsal</button>
+                <button class="filtro" data-esporte="Vôlei">Vôlei</button>
+                <button class="filtro" data-esporte="Basquete">Basquete</button>
+            </div>
 
-    <footer>Contato: quadralivre@gmail.com</footer>
+            <div class="quadras" id="lista-quadras"></div>
+        </section>
+
+        <section class="secao reserva" id="reservar">
+            <p class="destaque">GARANTA SEU HORÁRIO</p>
+            <h2>Faça sua reserva</h2>
+
+            <form id="form-reserva">
+                <label for="quadra">Escolha a quadra:</label>
+                <select id="quadra" required></select>
+
+                <label for="data">Escolha a data:</label>
+                <input type="date" id="data" required>
+
+                <label>Horários disponíveis:</label>
+                <div id="horarios" class="horarios">
+                    Escolha uma data para ver os horários.
+                </div>
+
+                <input type="hidden" id="horario-escolhido" required>
+
+                <label for="nome">Seu nome:</label>
+                <input type="text" id="nome"
+                    placeholder="Digite seu nome" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone"
+                    placeholder="(41) 99999-9999" required>
+
+                <button type="submit" class="botao">
+                    Solicitar reserva
+                </button>
+            </form>
+
+            <div id="mensagem"></div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#inicio" class="logo">Quadra<span>Livre</span></a>
+        <p>Seu esporte, seu horário, sua quadra.</p>
+        <p>© 2026 QuadraLivre</p>
+    </footer>
+
 </body>
 </html>
