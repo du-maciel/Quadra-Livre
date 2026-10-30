@@ -127,7 +127,6 @@ function mostrarQuadras(filtro = "Todos") {
     });
 }
 
-// Preencher o seletor de quadras
 function preencherQuadras() {
     seletor.innerHTML = "";
 
