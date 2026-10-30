@@ -1,92 +1,451 @@
-h1{
-    text-align: center;
-    background-color: rgb(11, 77, 31);
-    padding: 40px;
-}
-*{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(7, 56, 7);
-    color: white;
+* {
     margin: 0;
-}
-ul{
-    padding: 15px;
-    line-height: 40px;
-    margin-left: 40px;
-    font-size: 25px;
-    padding: 15px;
-}
-footer{
-    font-size: 25px;
-    text-align: center;
-    background-color: rgb(11, 77, 31);
-    padding: 40px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-h2{
-    padding: 30px;
-}
-h3{
-    padding: 30px;
-    font-size: 25px;
-}
-img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    width: 350px;
-    height: 280px;
-}
-
-#lista-esportes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    list-style: none;
     padding: 0;
+    box-sizing: border-box;
 }
 
-#lista-esportes button,
-.horario {
-    background-color: #16834a;
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7f5;
+    color: #202b25;
+}
+
+/* ==========================
+   CABEÇALHO
+========================== */
+
+header {
+    width: 100%;
+    min-height: 80px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    box-shadow: 0 2px 12px #0000000a;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #173f2b;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #36a866;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #45534a;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #36a866;
+}
+
+/* ==========================
+   BOTÕES
+========================== */
+
+.botao {
+    display: inline-block;
+    background-color: #239653;
     color: white;
     border: none;
-    padding: 12px 20px;
     border-radius: 8px;
+    padding: 14px 23px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
     cursor: pointer;
-    font-size: 16px;
-    margin: 5px;
+    transition: 0.3s;
 }
 
-#lista-esportes button:hover,
-.horario:hover {
-    background-color: #0e5c33;
+.botao:hover {
+    background-color: #176d3a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px #23965335;
 }
 
-#area-horarios {
-    margin-top: 30px;
-    padding: 24px;
-    background-color: #f2f5f3;
-    border-radius: 12px;
+/* ==========================
+   BANNER PRINCIPAL
+========================== */
+
+.banner {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    background:
+        linear-gradient(90deg, #102d20ed, #102d2080),
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1600&q=85");
+
+    background-position: center;
+    background-size: cover;
+    color: white;
 }
 
-#area-horarios[hidden] {
-    display: none;
+.banner > div {
+    max-width: 650px;
 }
 
-#data-reserva {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+.destaque {
+    color: #36b86c;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
 }
 
-#horarios {
+.banner h1 {
+    font-size: 55px;
+    line-height: 1.15;
+    margin-bottom: 22px;
+}
+
+.banner h1 span {
+    color: #50d887;
+}
+
+.descricao {
+    color: #e0e9e2;
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+/* ==========================
+   SEÇÕES
+========================== */
+
+.secao {
+    padding: 85px 8%;
+    text-align: center;
+}
+
+.secao h2 {
+    font-size: 35px;
+    color: #173f2b;
+    margin-bottom: 35px;
+}
+
+/* ==========================
+   FILTROS DE ESPORTES
+========================== */
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.filtro {
+    padding: 11px 23px;
+    border: 1px solid #dce5dd;
+    background-color: white;
+    color: #45534a;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filtro:hover {
+    border-color: #239653;
+    color: #239653;
+}
+
+.filtro.ativo {
+    background-color: #239653;
+    color: white;
+    border-color: #239653;
+}
+
+/* ==========================
+   CARTÕES DAS QUADRAS
+========================== */
+
+.quadras {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    text-align: left;
+}
+
+.card {
+    background-color: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px #0000000c;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px #00000018;
+}
+
+.foto-quadra {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #dce8df;
+}
+
+.foto-alternativa {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    background-color: #dce8df;
+}
+
+.card-conteudo {
+    padding: 22px;
+}
+
+.card-conteudo h3 {
+    font-size: 21px;
+    color: #173f2b;
+    margin-bottom: 12px;
+}
+
+.card-conteudo p {
+    color: #718077;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.card-conteudo .preco {
+    color: #239653;
+    font-size: 19px;
+    font-weight: bold;
+    margin: 18px 0;
+}
+
+.card-conteudo .botao {
+    width: 100%;
+    text-align: center;
+}
+
+
+.reserva {
+    background-color: #eaf2ec;
+}
+
+.reserva h2 {
+    margin-bottom: 40px;
+}
+
+#form-reserva {
+    max-width: 550px;
+    margin: auto;
+    padding: 35px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px #0000000c;
+    text-align: left;
+}
+
+#form-reserva label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #344b3c;
+    margin-bottom: 9px;
+    margin-top: 20px;
+}
+
+#form-reserva label:first-child {
+    margin-top: 0;
+}
+
+#form-reserva input,
+#form-reserva select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #dce5dd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    background-color: #fafcfb;
+    color: #26352b;
+    transition: 0.3s;
+}
+
+#form-reserva input:focus,
+#form-reserva select:focus {
+    border-color: #239653;
+    box-shadow: 0 0 0 3px #23965320;
+}
+
+
+
+.horarios {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
+    margin: 12px 0;
+    color: #718077;
+    font-size: 14px;
 }
 
+.horario {
+    padding: 11px 16px;
+    border: 1px solid #cbd9ce;
+    background-color: #f5faf6;
+    color: #267545;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.horario:hover:not(:disabled) {
+    background-color: #d9f3e1;
+    border-color: #239653;
+}
+
+.horario.selecionado {
+    background-color: #239653;
+    color: white;
+    border-color: #239653;
+}
+
+.horario:disabled {
+    background-color: #eeeeee;
+    color: #a3a3a3;
+    border-color: #dddddd;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+
+
+#form-reserva .botao {
+    width: 100%;
+    margin-top: 25px;
+}
+
+/* MENSAGEM DA RESERVA */
+
+#mensagem {
+    max-width: 550px;
+    margin: 20px auto 0;
+    padding: 15px;
+    color: #176d3a;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+
+
+footer {
+    background-color: #142d20;
+    color: #c5d3c9;
+    padding: 40px 8%;
+    text-align: center;
+}
+
+footer .logo {
+    color: white;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+footer p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    header > .botao {
+        padding: 11px 14px;
+        font-size: 12px;
+    }
+
+    .banner {
+        min-height: 450px;
+        padding: 65px 7%;
+    }
+
+    .banner h1 {
+        font-size: 39px;
+    }
+
+    .descricao {
+        font-size: 15px;
+    }
+
+    .secao {
+        padding: 65px 5%;
+    }
+
+    .secao h2 {
+        font-size: 28px;
+    }
+
+    .quadras {
+        grid-template-columns: 1fr;
+    }
+
+    #form-reserva {
+        padding: 25px 20px;
+    }
+
+    .horarios {
+        gap: 8px;
+    }
+
+    .horario {
+        padding: 10px 12px;
+    }
+}
