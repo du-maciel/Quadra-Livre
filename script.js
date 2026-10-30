@@ -65,7 +65,7 @@ function salvarReservas(reservas) {
     localStorage.setItem(CHAVE, JSON.stringify(reservas));
 }
 
-// Mostrar os cartões com as fotos
+
 function mostrarQuadras(filtro = "Todos") {
     const filtradas = filtro === "Todos"
         ? quadras
